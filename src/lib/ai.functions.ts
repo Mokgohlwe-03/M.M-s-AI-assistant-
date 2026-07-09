@@ -1,14 +1,18 @@
 import { createServerFn } from "@tanstack/react-start";
-import { generateText } from "ai";
 import { z } from "zod";
-import { createLovableAiGatewayProvider } from "./ai-gateway.server";
 
 const MODEL = "google/gemini-3-flash-preview";
 
-function getModel() {
+async function getModel() {
   const key = process.env.LOVABLE_API_KEY;
   if (!key) throw new Error("Missing LOVABLE_API_KEY");
+  const { createLovableAiGatewayProvider } = await import("./ai-gateway.server");
   return createLovableAiGatewayProvider(key)(MODEL);
+}
+
+async function runGenerate(args: Parameters<typeof import("ai").generateText>[0]) {
+  const { generateText } = await import("ai");
+  return generateText(args);
 }
 
 const EmailInput = z.object({
