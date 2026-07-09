@@ -41,7 +41,7 @@ Rules:
 - Keep it concise, clear, well-structured, and grammatically correct.
 - Sign off appropriately.`;
 
-    const { text } = await generateText({ model: getModel(), system, prompt });
+    const { text } = await runGenerate({ model: await getModel(), system, prompt });
     return { text: text.trim() };
   });
 
@@ -75,7 +75,7 @@ A 3-5 sentence overview.
 ## Suggested Next Steps
 A short numbered list of concrete next actions.`;
 
-    const { text } = await generateText({ model: getModel(), system, prompt });
+    const { text } = await runGenerate({ model: await getModel(), system, prompt });
     return { text: text.trim() };
   });
 
@@ -93,8 +93,8 @@ export const chat = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const system =
       "You are an AI Workplace Assistant. Help professionals improve emails, explain policies, create meeting agendas, draft reports, and answer workplace questions. Be clear, professional, concise, and helpful. Use Markdown for structure when useful.";
-    const { text } = await generateText({
-      model: getModel(),
+    const { text } = await runGenerate({
+      model: await getModel(),
       system,
       messages: data.messages,
     });
