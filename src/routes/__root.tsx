@@ -81,25 +81,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        title: "M.M. AI Workplace Assistant — Draft emails, research, and chat",
+        title: "Dashboard — M.M. AI Workplace Assistant",
       },
       {
         name: "description",
         content:
-          "Privacy-first AI workspace: generate professional emails, summarize research, and chat with a workplace assistant. No login, no data stored.",
+          "Your private AI workspace. Draft emails, summarize research, and chat with a workplace assistant.",
       },
       { name: "author", content: "M.M." },
       {
         property: "og:title",
-        content: "M.M. AI Workplace Assistant",
+        content: "Dashboard — M.M. AI Workplace Assistant",
       },
       {
         property: "og:description",
         content:
-          "Privacy-first AI productivity workspace. Draft emails, summarize research, chat with a workplace assistant. No account required.",
+          "Your private AI workspace. Draft emails, summarize research, and chat with a workplace assistant.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Dashboard — M.M. AI Workplace Assistant" },
+      { name: "twitter:description", content: "Your private AI workspace. Draft emails, summarize research, and chat with a workplace assistant." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/32046742-5ba3-4628-b364-2d6b1628634a/id-preview-abe07b9f--e76adb21-f273-4fad-9fdf-eb5f083dd417.lovable.app-1783640129580.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/32046742-5ba3-4628-b364-2d6b1628634a/id-preview-abe07b9f--e76adb21-f273-4fad-9fdf-eb5f083dd417.lovable.app-1783640129580.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
